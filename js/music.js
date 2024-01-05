@@ -3,10 +3,9 @@ const TOKEN_URL = "https://accounts.spotify.com/api/token";
 const DEVICES = "https://api.spotify.com/v1/me/player/devices";
 const PLAYER = "https://api.spotify.com/v1/me/player";
 
-import {redirect_uri, client_id, client_secret} from "secret.js";
-// const redirect_uri = ""
-// const client_id = ""
-// const client_secret = ""
+const redirect_uri = "http://127.0.0.1:5500/index.html"     // your value
+const client_id = "7723844ff8c74907bd6d923db2d1cf9b"        // your value
+const client_secret = "30480b1e5e8f45b1b1dd7323ebfb455e"    // your value
 
 var accessToken = null;
 var authorization_code = null;
@@ -132,12 +131,10 @@ function callApi(method, url, body, callback) {
 
 $(document).ready(() => { // execute when ready
     $('#searchForm').on('submit', (e) => {
-        // get input from user and replace space with %20 for GET method
-        let input = ($('#searchInput').val());
+        let input = ($('#searchInput').val()); // get input from user and replace space with %20 for GET method
         input = replaceSpace(input);
 
-        // check on which button is chosen and send get request
-        let search_type = ($('input[type=radio]:checked'));
+        let search_type = ($('input[type=radio]:checked')); // which button is chosen
         var option = search_type.val();
         if (option === 'Name') {
             $(function () {
@@ -145,7 +142,7 @@ $(document).ready(() => { // execute when ready
                     type: "GET",
                     url: "https://api.spotify.com/v1/search", // endpoint
                     data: {
-                        q: input,  // Replace with your search query
+                        q: input,  // search query
                         type: "track",
                     },
                     headers: {
@@ -168,7 +165,7 @@ $(document).ready(() => { // execute when ready
                     type: "GET",
                     url: "https://api.spotify.com/v1/search",
                     data: {
-                        q: input,  // Replace with your search query
+                        q: input,  // search query
                         type: "artist",
                     },
                     headers: {
@@ -180,9 +177,9 @@ $(document).ready(() => { // execute when ready
                         console.log(top_artist_id);
                         $.ajax({
                             type: "GET",
-                            url: `https://api.spotify.com/v1/artists/${top_artist_id}/top-tracks`,
+                            url: `https://api.spotify.com/v1/artists/${top_artist_id}/top-tracks`, // endpoint
                             data: {
-                                market: "ES",
+                                market: "ES", // all
                             },
                             headers: {
                                 Authorization: "Bearer " + accessToken,
@@ -279,10 +276,7 @@ function displayArtistResult(res) {
 // replace white space with %20 in a string
 function replaceSpace(arr){
     for (var i = 0; i < arr.length; i++){
-        if (arr[i] === '') {
-            arr[i] = '%20';
-        }
+        if (arr[i] === ' ') arr[i] = '%20';
     }
     return arr;
 }
-
