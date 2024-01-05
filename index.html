@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2DT Music Search App</title>
+    <link rel="stylesheet" href="./css/music.css?v=1.7">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="icon" href="./img/favicon.png">
+</head>
+<body id="body" onload="onPageLoad()">
+    <div class="spinner" id="spinner">
+        <div class="wrapper">
+            <i class="fas fa-code"></i> <!-- fontawesome.com -->
+            <h3>Loading...</h3>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Music Search App</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://www.linkedin.com/in/2dt/">About Truong Dang<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-4">2DT Music Search App</h1>
+                <hr>
+                <form class="form-group my-2 my-lg-0" id="searchForm">
+                <input type="text" class="form-control" placeholder="Enter Your Search" id="searchInput">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="Name">
+                    <label class="custom-control-label" for="customRadio1">Search by Song Name</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="Artist">
+                    <label class="custom-control-label" for="customRadio2">Seach by Artists</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="Lyrics">
+                    <label class="custom-control-label" for="customRadio3">Search by Lyrics</label>
+                </div>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="results"></div>
+    </div>
+    <hr>
+    <footer>
+        <h4>Powered by<img src="./img/logo.png" alt="Spotify logo" class="img-thumbnail"></h4>
+        <hr>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="./js/music.js"></script>
+    <script src="./js/loader.js"></script>
+</body>
+</html>
