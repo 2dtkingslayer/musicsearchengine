@@ -1,9 +1,10 @@
-const AUTHORIZE = "https://accounts.spotify.com/authorize"
+const AUTHORIZE = "https://accounts.spotify.com/authorize";
 const TOKEN_URL = "https://accounts.spotify.com/api/token";
 const DEVICES = "https://api.spotify.com/v1/me/player/devices";
 const PLAYER = "https://api.spotify.com/v1/me/player";
 
 const redirect_uri = "https://2dtkingslayer.github.io/musicsearchengine/"     // your value
+// const redirect_uri = "http://127.0.0.1:5500/index.html"
 const client_id = "7723844ff8c74907bd6d923db2d1cf9b"        // your value
 const client_secret = "30480b1e5e8f45b1b1dd7323ebfb455e"    // your value
 
