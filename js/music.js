@@ -3,6 +3,7 @@ const TOKEN_URL = "https://accounts.spotify.com/api/token";
 const DEVICES = "https://api.spotify.com/v1/me/player/devices";
 const PLAYER = "https://api.spotify.com/v1/me/player";
 
+import {redirect_uri, client_id, client_secret} from "secret.js";
 // const redirect_uri = ""
 // const client_id = ""
 // const client_secret = ""
